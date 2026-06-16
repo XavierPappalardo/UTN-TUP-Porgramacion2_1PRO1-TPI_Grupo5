@@ -1,6 +1,6 @@
 package Entities;
 
-public class Categoria {
+public class Categoria extends Base{
 
     private String nombre;
 

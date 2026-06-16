@@ -1,4 +1,4 @@
 package Entities;
 
-public class Producto {
+public class Producto extends Base{
 }

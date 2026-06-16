@@ -1,4 +1,4 @@
 package Entities;
 
-public class DetallePedido {
+public class DetallePedido extends Base{
 }
