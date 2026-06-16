@@ -2,7 +2,7 @@ package Entities;
 
 import Enums.Rol;
 
-public class Usuario {
+public class Usuario extends Base{
 
     private String nombre;
 

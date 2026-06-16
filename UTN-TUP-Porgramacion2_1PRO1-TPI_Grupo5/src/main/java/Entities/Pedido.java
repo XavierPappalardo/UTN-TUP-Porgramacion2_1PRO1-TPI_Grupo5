@@ -5,7 +5,7 @@ import Enums.FormaPago;
 
 import java.time.LocalDate;
 
-public class Pedido {
+public class Pedido extends Base{
 
     private LocalDate fecha;
 
