@@ -1,5 +1,7 @@
 package Entities;
 
+import Enums.Rol;
+
 public class Usuario {
 
     private String nombre;
