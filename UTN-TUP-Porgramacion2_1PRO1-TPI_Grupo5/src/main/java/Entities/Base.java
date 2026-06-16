@@ -2,12 +2,12 @@ package Entities;
 
 import java.time.LocalDateTime;
 
-public class Base {
+public abstract class Base {
 
-    private Long id;
+    protected Long id;
 
-    private boolean eliminado;
+    protected boolean eliminado;
 
-    private LocalDateTime createdAt;
+    protected LocalDateTime createdAt;
 
 }
