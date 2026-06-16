@@ -2,10 +2,11 @@ package Entities;
 
 import Enums.Estado;
 import Enums.FormaPago;
+import Interfaces.Calculable;
 
 import java.time.LocalDate;
 
-public class Pedido extends Base{
+public class Pedido extends Base implements Calculable {
 
     private LocalDate fecha;
 
@@ -15,9 +16,13 @@ public class Pedido extends Base{
 
     private FormaPago formaPago;
 
+
+
     public void addDetallePedido(int i, Double j, Pedido k){
 
+        @Override
 
+        public void calcularTotal();
 
     }
 
