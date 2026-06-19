@@ -14,7 +14,16 @@ public class Producto extends Base{
     private Categoria categoria;
 
     // Constructor
-    public Producto(Long id, boolean eliminado, LocalDateTime createdAt, String nombre, Double precio, String descripcion, int stock, String imagen, Boolean disponible, Categoria categoria) {
+    public Producto(Long id,
+                    boolean eliminado,
+                    LocalDateTime createdAt,
+                    String nombre,
+                    Double precio,
+                    String descripcion,
+                    int stock,
+                    String imagen,
+                    Boolean disponible,
+                    Categoria categoria) {
         super(id, eliminado, createdAt);
         this.nombre = nombre;
         this.precio = precio;
