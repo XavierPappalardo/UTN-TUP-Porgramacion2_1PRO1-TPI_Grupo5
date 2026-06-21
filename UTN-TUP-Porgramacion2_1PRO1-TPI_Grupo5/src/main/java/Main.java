@@ -4,6 +4,9 @@ import Entities.*;
 import Menu.MenuCRUDCategorias;
 import Menu.MenuCRUDPedidos;
 import Menu.UsuarioLog;
+import Services.CategoriaService;
+import Services.PedidoService;
+import Services.ProductoService;
 import Services.UsuarioService;
 
 import java.time.LocalDateTime;
@@ -14,6 +17,10 @@ public class Main {
     public static void main(String[] args) throws MailDuplicadoException, StockInvalidoException, EntidadNoEncontradaException {
 
         Scanner scanner = new Scanner(System.in);
+        PedidoService pservice = new PedidoService();
+        ProductoService prodsevice = new ProductoService();
+        CategoriaService catservice = new CategoriaService();
+        UsuarioService ususervice = new UsuarioService();
 
         int opcionSistema;
 
@@ -37,15 +44,13 @@ public class Main {
 
                 case 1:
 
-                    do {
+                    Usuario usuarioCategorias = UsuarioLog.usuarioLog();
 
-                        usuarioActivo = UsuarioLog.usuarioLog();
-
-                        break;
-
-                    } while (UsuarioLog.usuarioLog() == null);
-
-                    MenuCRUDCategorias.menu(usuarioActivo);
+                    if (usuarioCategorias !=null) {
+                        MenuCRUDCategorias.menu(usuarioCategorias);
+                    } else {
+                        System.out.println("\nLogin invalido, volviendo al menu principal...");
+                    }
 
                     break;
 
@@ -68,6 +73,15 @@ public class Main {
 
                     case 4:
 
+                        Usuario usuarioPedidos = UsuarioLog.usuarioLog();
+
+                        if (usuarioPedidos != null) {
+                            MenuCRUDPedidos.menu(usuarioPedidos, pservice, scanner);
+                        } else {
+                            System.out.println("\nLogin invalido, volviendo al menu principal");
+                        }
+
+                        break;
 
                     case 0:
 

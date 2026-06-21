@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public class MenuCRUDPedidos {
 
-    public static void menu(Usuario usuario){
+    public static void menu(Usuario usuario, PedidoService pservice, Scanner scanner){
 
         System.out.println("\n====== MENÚ PEDIDOS ======");
 
@@ -19,10 +19,6 @@ public class MenuCRUDPedidos {
         do {
 
             System.out.println("\n1. Listar\n2. Crear\n3. Editar\n4. Eliminar\nSeleccione: ");
-
-            Scanner scanner = new Scanner(System.in);
-
-            PedidoService pservice = new PedidoService();
 
             opcion = scanner.nextInt();
 
@@ -98,7 +94,7 @@ public class MenuCRUDPedidos {
 
                     pservice.crearPedido(pedido);
 
-                    break;
+                    return;
 
                 case 3:
 
@@ -112,13 +108,19 @@ public class MenuCRUDPedidos {
 
                     estado = Estado.fromCodigo(est);
 
+                    System.out.println("Ingrese el nuevo total del pedido: ");
+
+                    double totalEditado = scanner.nextDouble();
+
                     System.out.println("Ingrese la forma de pago del pedido (1. TARJETA\n2. TRANSFERENCIA\n3. EFECTIVO): ");
 
                     fp = scanner.nextInt();
 
                     formaPago = FormaPago.fromCodigo(fp);
 
-                    Pedido pedidoEditado = new Pedido(id_edPedido, false, LocalDateTime.now(), LocalDate.now(), estado, total, formaPago, usuario, detallesPedido);
+                    ArrayList<DetallePedido> detallesEditados = new ArrayList<>();
+
+                    Pedido pedidoEditado = new Pedido(id_edPedido, false, LocalDateTime.now(), LocalDate.now(), estado, totalEditado, formaPago, usuario, detallesEditados);
 
                     pservice.eliminarPedido(id_edPedido);
 
