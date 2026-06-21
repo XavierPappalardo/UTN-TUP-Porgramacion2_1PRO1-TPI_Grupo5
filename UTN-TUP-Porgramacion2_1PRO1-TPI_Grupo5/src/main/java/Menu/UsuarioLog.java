@@ -12,7 +12,7 @@ public class UsuarioLog {
 
     public static Usuario usuarioLog(UsuarioService ususervice, Scanner scanner) throws MailDuplicadoException {
 
-        if (ususervice.getUsuarios() == null) {
+        if (ususervice.getUsuarios().isEmpty()) {
 
             System.out.println("No se han encontrado usuarios registrados. ¿Desea crear uno?\n(Ingrese '1' si la respuesta es afirmativa, o '0' en caso contrario): ");
 
@@ -40,7 +40,7 @@ public class UsuarioLog {
                 System.out.println("Ingrese la contraseña del nuevo usuario");
                 String contraseniaNuevoUsuario = scanner.nextLine();
 
-                System.out.println("Ingrese el nombre del nuevo usuario");
+                System.out.println("Ingrese el rol del nuevo usuario (ADMIN: 1 / USUARIO: 2): ");
                 int codigoRol = scanner.nextInt();
                 scanner.nextLine();
 

@@ -37,12 +37,12 @@ public class Main {
 
                 case 1:
 
-                    Usuario usuarioCategorias = UsuarioLog.usuarioLog(ususervice , scanner);
+                    Usuario usuarioCategorias = UsuarioLog.usuarioLog(ususervice, scanner);
 
-                    if (usuarioCategorias !=null) {
-                        MenuCRUDCategorias.menu(usuarioCategorias);
+                    if (usuarioCategorias != null) {
+                        MenuCRUDCategorias.menu(usuarioCategorias, catservice, scanner);
                     } else {
-                        System.out.println("\nLogin invalido, volviendo al menu principal...");
+                        System.out.println("\nLogin inválido, volviendo al menú principal...");
                     }
 
                     break;

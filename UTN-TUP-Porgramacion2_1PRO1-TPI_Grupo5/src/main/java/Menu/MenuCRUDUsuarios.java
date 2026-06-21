@@ -46,7 +46,7 @@ public class MenuCRUDUsuarios {
                     System.out.println("Ingrese la contraseña: ");
                     String contrasenia_new = scanner.nextLine();
 
-                    System.out.println("Ingrese el rol (código): ");
+                    System.out.println("Ingrese el rol (1 - ADMIN - 2 USUARIO): ");
                     int codigoRol_new = scanner.nextInt();
                     scanner.nextLine();
 
