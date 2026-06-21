@@ -76,6 +76,22 @@ public class MenuCRUDPedidos {
 
                         if (seguirAgregandoDetalles == 1){
 
+                            System.out.println("Ingrese el nombre del producto: ");
+
+                            String nombreProducto = scanner.nextLine();
+
+                            System.out.println("Ingrese el precio del producto: ");
+
+                            double precioProducto = scanner.nextDouble();
+
+                            System.out.println("Ingrese la descripción del producto: ");
+
+                            String descripcionProducto = scanner.nextLine();
+
+                            System.out.println("Ingrese el stock del producto: ");
+
+                            int stockProducto = scanner.nextInt();
+
                             System.out.println("Ingrese el id de la categoría del producto: ");
 
                             Long idCategoria = scanner.nextLong();
@@ -84,7 +100,7 @@ public class MenuCRUDPedidos {
 
                             Categoria categoria = cservice.buscarPorId(idCategoria);
 
-                            Producto producto = new Producto(categoria);
+                            Producto producto = new Producto(this.getStock(), categoria);
 
                             DetallePedido detallePedido = new DetallePedido();
 
