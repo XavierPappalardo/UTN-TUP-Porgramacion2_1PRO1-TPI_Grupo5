@@ -42,9 +42,7 @@ public class MenuCRUDPedidos {
 
                     Estado estado = Estado.fromCodigo(est);
 
-                    System.out.println("Ingrese el total del pedido: ");
-
-                    double total = scanner.nextDouble();
+                    double total = 0;
 
                     System.out.println("Ingrese la forma de pago del pedido (1. TARJETA\n2. TRANSFERENCIA\n3. EFECTIVO): ");
 
@@ -83,6 +81,8 @@ public class MenuCRUDPedidos {
                             Long idDetalle = scanner.nextLong();
 
                             DetallePedido detallePedido = new DetallePedido(idDetalle, false, LocalDateTime.now(), cantidadDetalle, subtotalDetalle, producto);
+
+                            total =+ subtotalDetalle;
 
                             detallesPedido.add(detallePedido);
 
