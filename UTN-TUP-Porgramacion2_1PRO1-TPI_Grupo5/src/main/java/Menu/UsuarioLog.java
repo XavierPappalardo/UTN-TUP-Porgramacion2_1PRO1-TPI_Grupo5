@@ -21,23 +21,23 @@ public class UsuarioLog {
 
             if (crearUsuario == 1){
 
-                System.out.println("Ingrese el id del nuevo usuario");
+                System.out.println("Ingrese el id del nuevo usuario: ");
                 Long idNuevoUsuario = scanner.nextLong();
                 scanner.nextLine();
 
-                System.out.println("Ingrese el nombre del nuevo usuario");
+                System.out.println("Ingrese el nombre del nuevo usuario: ");
                 String nombreNuevoUsuario = scanner.nextLine();
 
-                System.out.println("Ingrese el apellido del nuevo usuario");
+                System.out.println("Ingrese el apellido del nuevo usuario: ");
                 String apellidoNuevoUsuario = scanner.nextLine();
 
-                System.out.println("Ingrese el mail del nuevo usuario");
+                System.out.println("Ingrese el mail del nuevo usuario: ");
                 String mailNuevoUsuario = scanner.nextLine();
 
-                System.out.println("Ingrese el celular del nuevo usuario");
+                System.out.println("Ingrese el celular del nuevo usuario: ");
                 String celularNuevoUsuario = scanner.nextLine();
 
-                System.out.println("Ingrese la contraseña del nuevo usuario");
+                System.out.println("Ingrese la contraseña del nuevo usuario: ");
                 String contraseniaNuevoUsuario = scanner.nextLine();
 
                 System.out.println("Ingrese el rol del nuevo usuario (ADMIN: 1 / USUARIO: 2): ");
@@ -72,7 +72,7 @@ public class UsuarioLog {
             if (usuario != null) {
                 return usuario;
             } else {
-                System.out.println("No hay ningun usuario con ese id. Intente de nuevo:");
+                System.out.println("No hay ningún usuario con ese id. Intente de nuevo.");
                 return null;
             }
 

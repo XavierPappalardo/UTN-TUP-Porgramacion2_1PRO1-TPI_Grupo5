@@ -18,7 +18,7 @@ public class MenuCRUDPedidos {
 
         do {
 
-            System.out.println("\n1. Listar\n2. Crear\n3. Editar\n4. Eliminar\nSeleccione: ");
+            System.out.println("\n1. Listar\n2. Crear\n3. Editar\n4. Eliminar\n0. Volver al menú\nSeleccione: ");
 
             opcion = scanner.nextInt();
             scanner.nextLine();
@@ -123,13 +123,19 @@ public class MenuCRUDPedidos {
 
                     return;
 
+                case 0:
+
+                    System.out.println("--------Volviendo al menú principal-------\n");
+
+                    return;
+
                 default:
 
                     System.out.println("\nPor favor, ingrese una instrucción válida.");
 
             }
 
-        } while (opcion < 0 || opcion > 4);
+        } while (opcion < -1 || opcion > 5);
 
     }
 
