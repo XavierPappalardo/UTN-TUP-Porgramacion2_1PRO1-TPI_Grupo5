@@ -76,12 +76,12 @@ public class Main {
                         Usuario usuarioPedidos = UsuarioLog.usuarioLog(ususervice, scanner);
 
                         if (usuarioPedidos != null) {
-                            MenuCRUDPedidos.menu(usuarioPedidos, pservice, scanner);
+                            MenuCRUDPedidos.menu(usuarioPedidos, pservice, prodservice, scanner);
                         } else {
-                            System.out.println("\nLogin invalido, volviendo al menu principal");
+                            System.out.println("\nLogin inválido, volviendo al menú principal");
                         }
 
-                        break;
+                    break;
 
                     case 0:
 

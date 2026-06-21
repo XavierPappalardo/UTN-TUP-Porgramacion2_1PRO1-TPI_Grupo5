@@ -36,9 +36,8 @@ public class Pedido extends Base implements Calculable {
         this.estado = estado;
         this.formaPago = formaPago;
         this.usuario = usuario;
-
-        this.total = 0.0;
-        this.detalles = new ArrayList<>();
+        this.total = total;
+        this.detalles = (detalles != null) ? detalles : new ArrayList<>();
     }
 
     // Getters y Setters
